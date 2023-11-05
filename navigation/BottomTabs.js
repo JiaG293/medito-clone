@@ -3,7 +3,7 @@ import { NavigationContainer, DarkTheme, DefaultTheme, useTheme } from '@react-n
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button, Pressable, useColorScheme } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Packs from '../screens/Packs'
+import PacksStacks from '../navigation/PacksStacks'
 import PressableCustom from '../components/PressableCustom'
 import HomeStacks from './HomeStacks';
 
@@ -43,11 +43,12 @@ export default function BottomTabs() {
                 <Tab.Screen
                     options={({ navigation, route }) => ({
                         tabBarLabel: 'Packs',
+                        headerShown: false,
                         tabBarIcon: ({ color }) => (
                             <MaterialCommunityIcons name="menu" color={color} size={26} />
                         )
                     })}
-                    name="Packs" component={Packs} />
+                    name="PacksStacks" component={PacksStacks} />
             </Tab.Navigator>
         </NavigationContainer>
     );

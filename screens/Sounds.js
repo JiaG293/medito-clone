@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function Sound({navigation}) {
+export default function Sounds({navigation}) {
   return (
     <View style={styles.container}>
       <Text>Sound</Text>

@@ -14,12 +14,32 @@ export default function Home({ navigation }) {
       <ScrollView style={{ minHeight: 100, maxHeight: 1900 }}>
         <View style={styles.categoryContainer}>
           <View style={styles.categoryRow}>
-            <ButtonCategory title='Daily Meditation' image='50x50.png' onPress={() => navigation.navigate('Sleep')}></ButtonCategory>
-            <ButtonCategory title='Timer' image='50x50.png' onPress={() => navigation.navigate('Sleep')}></ButtonCategory>
+            <ButtonCategory
+              title='Daily Meditation'
+              image='50x50.png'
+              onPress={() => navigation.navigate('Daily Meditation')}
+
+            ></ButtonCategory>
+            <ButtonCategory
+              title='Timer'
+              image='50x50.png'
+              onPress={() => navigation.navigate('Timer')}
+
+            ></ButtonCategory>
           </View>
           <View style={styles.categoryRow}>
-            <ButtonCategory title='Downloads' image='50x50.png' onPress={() => navigation.navigate('Sleep')}></ButtonCategory>
-            <ButtonCategory title='Sleep' image='50x50.png' onPress={() => navigation.navigate('Sleep')}></ButtonCategory>
+            <ButtonCategory
+              title='Downloads'
+              image='50x50.png'
+              onPress={() => navigation.navigate('Downloads')}
+
+            ></ButtonCategory>
+            <ButtonCategory
+              title='Sleep'
+              image='50x50.png'
+              onPress={() => navigation.navigate('Sleep')}
+
+            ></ButtonCategory>
           </View>
         </View>
 
@@ -48,6 +68,7 @@ export default function Home({ navigation }) {
                   title={item.title}
                   image={item.image}
                   subtitle={item.subtile}
+                  onPress={() => navigation.navigate('Details')}
                 >
                 </ItemCourseHome>
               )}
@@ -62,7 +83,7 @@ export default function Home({ navigation }) {
           <Stat
             count={0}
             title="Current Streak"
-            onPress={() => { }}
+            onPress={() => navigation.navigate('Player')} //test
 
           ></Stat>
           <Stat

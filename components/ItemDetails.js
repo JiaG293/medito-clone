@@ -1,11 +1,15 @@
-import * as React from 'react'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
-const ItemPack = ({ title, subtitle, image, onPress, id }) => {
+const ItemDetails = ({ title, subtitle, image, onPress, id, icon, onLongPress, selected }) => {
+
     return (
         <View style={styles.container} key={id}>
             <Pressable
                 android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
+                onLongPress={onLongPress}
+                delayLongPress={1000}
                 onPress={onPress}
                 style={({ pressed }) => [
                     {
@@ -14,8 +18,10 @@ const ItemPack = ({ title, subtitle, image, onPress, id }) => {
                     },
                     styles.pressable,
                 ]}
-            >
-                <View style={styles.image} source={image}></View>
+            >{/* check */}
+                <View style={styles.image} source={image}>
+                    <MaterialCommunityIcons name={selected ? 'check' : (icon ? icon : 'play-circle')} color='#ffffff' size={28}></MaterialCommunityIcons>
+                </View>
                 <View style={styles.content}>
                     <Text
                         ellipsizeMode='tail'
@@ -54,6 +60,8 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         backgroundColor: 'rgba(45, 252, 171, 0.3)',
         borderRadius: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     content: {
         flex: 1,
@@ -77,4 +85,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default ItemPack;
+export default ItemDetails;

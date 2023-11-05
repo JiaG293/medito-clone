@@ -1,9 +1,10 @@
 import React from 'react'
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import ItemPack from '../components/ItemPack'
 import PACKS from '../data/PacksData'
 
 export default function Packs({ navigation }) {
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={{ flex: 1 }}>
@@ -15,6 +16,10 @@ export default function Packs({ navigation }) {
               title={item.title}
               image={item.image}
               subtitle={item.subtile}
+              onPress={() => navigation.navigate('Details', {
+                itemId: item.id,
+                itemData: item.title,
+              })}
             >
             </ItemPack>
           )}
@@ -22,8 +27,8 @@ export default function Packs({ navigation }) {
           initialNumToRender={5}
         >
         </FlatList>
-      </SafeAreaView>
-    </View>
+      </SafeAreaView >
+    </View >
   )
 }
 
