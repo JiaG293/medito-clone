@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
+import React from 'react'
 
-const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
+export default function Stat({ count, title, onPress }) {
     return (
-        <View style={styles.container} key={id}>
+        <View style={styles.container}>
             <Pressable
                 android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
                 onPress={onPress}
@@ -15,10 +15,9 @@ const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
                     styles.pressable,
                 ]}
             >
-                <View style={styles.image} source={image}></View>
                 <View style={styles.content}>
-                    <Text ellipsizeMode='tail' numberOfLines={2} style={styles.title}>{title}</Text>
-                    <Text ellipsizeMode='tail' numberOfLines={2} style={styles.subtitle}>{subtitle}</Text>
+                    <Text style={styles.title}>{count}</Text>
+                    <Text numberOfLines={2} style={styles.subtitle}>{title}</Text>
                 </View>
             </Pressable>
         </View>
@@ -28,39 +27,27 @@ const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        maxWidth: 80,
+        maxHeight: 150,
         borderRadius: 10,
-        marginHorizontal: 10,
     },
     pressable: {
         borderRadius: 10,
-        paddingRight: 10,
-        elevation: 5,
-        width: 120,
-    },
-    image: {
-        width: 120,
-        height: 120,
-        backgroundColor: 'rgba(45, 252, 171, 0.3)',
-        borderRadius: 5,
     },
     content: {
-        width: 120,
-        padding: 5,
-        height: 80,
-
+        padding: 10,
+        alignItems: 'center'
     },
     title: {
         fontFamily: 'sans-serif',
         fontWeight: 'bold',
-        color: '#ffffff'
-
+        fontSize: 25,
+        color: '#ffffff',
+        marginBottom: 20,
     },
     subtitle: {
         fontFamily: 'sans-serif',
-        color: '#9c9c9c'
-
-
+        color: '#9c9c9c',
+        textAlign: 'center',
     },
 })
-
-export default ItemCourseHome;

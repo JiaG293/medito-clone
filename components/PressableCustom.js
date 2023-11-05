@@ -1,24 +1,36 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 import * as React from 'react'
 import { Pressable, SafeAreaView } from 'react-native'
 import { Image, StyleSheet, Text, View } from 'react-native'
 
-export default function PressableCustom({ navigation }) {
+export default function PressableCustom({ onPress, colorRiple, colorButton, colorButtonPressed, icon, colorIcon, colorIconPressed, sizeIcon }) {
     return (
         <SafeAreaView style={styles.container}>
             <Pressable
-                android_ripple={{color: 'rgba(67, 66, 66, 0.2)', borderless: false, foreground: true}}
-                onPress={() => { }}
+                android_ripple={{ color: { colorRiple }, borderless: false }}
+                onPress={onPress}
                 style={({ pressed }) => [
                     {
-                        backgroundColor: pressed ? 'rgba(67, 66, 66, 0.8)' : 'linear-gradient(90deg, rgba(117,233,200,0.7543859649122807) 0%, rgba(0,212,255,1) 100%)',
+                        borderRadius: 10,
+                        backgroundColor: pressed ? { colorButtonPressed } : colorButton,
                     },
-                    styles.wrapperCustom,
+                    styles.pressable,
                 ]}
             >
-                <View style={styles.buttonRow}>
-                    <Image style={styles.image} source={require('../assets/50x50.png')}></Image>
-                    <Text>DailyMeditaion</Text>
-                </View>
+
+                {({ pressed }) => (pressed ?
+                    <MaterialCommunityIcons
+                        name={icon ? icon : 'dots-vertical'}
+                        color={colorIcon ? colorIconPressed : 'rgba(0, 241, 149, 0.89)'}
+                        size={sizeIcon ? sizeIcon : 26}
+
+                    /> :
+                    <MaterialCommunityIcons
+                        name={icon ? icon : 'dots-vertical'}
+                        color={colorIcon ? colorICon : '#ffffff'}
+                        size={sizeIcon ? sizeIcon : 26}
+
+                    />)}
             </Pressable>
         </SafeAreaView>
     )
@@ -26,21 +38,16 @@ export default function PressableCustom({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: 30,
+        height: 30,
+
     },
-    image: {
-        width: 50,
-        height: 50,
-        flex: 1,
-        resizeMode: 'contain',
+    pressable: {
+        borderRadius: 10,
+        paddingRight: 10,
+        elevation: 5,
+        width: 30,
+        height: 30,
     },
-    buttonRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        zIndex: -1,
-    },
-    
+
 })

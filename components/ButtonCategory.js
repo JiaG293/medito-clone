@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Image, StyleSheet, Text, View, Pressable} from 'react-native'
 
-const ButtonCategory =  ({ title, image }) => {
+const ButtonCategory =  ({ title, image, onPress }) => {
     return (
         <View style={styles.container}>
             <Pressable
                 android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
-                onPress={() => { }}
+                onPress={onPress}
                 style={({ pressed }) => [
                     {
                         borderRadius: 10,

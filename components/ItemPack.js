@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
-const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
+const ItemPack = ({ title, subtitle, image, onPress }) => {
     return (
-        <View style={styles.container} key={id}>
+        <View style={styles.container}>
             <Pressable
                 android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
                 onPress={onPress}
@@ -17,8 +17,20 @@ const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
             >
                 <View style={styles.image} source={image}></View>
                 <View style={styles.content}>
-                    <Text ellipsizeMode='tail' numberOfLines={2} style={styles.title}>{title}</Text>
-                    <Text ellipsizeMode='tail' numberOfLines={2} style={styles.subtitle}>{subtitle}</Text>
+                    <Text
+                        ellipsizeMode='tail'
+                        numberOfLines={2}
+                        style={styles.title}
+                    >
+                        {title}
+                    </Text>
+                    <Text
+                        ellipsizeMode='tail'
+                        numberOfLines={2}
+                        style={styles.subtitle}
+                    >
+                        {subtitle}
+                    </Text>
                 </View>
             </Pressable>
         </View>
@@ -27,40 +39,42 @@ const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         borderRadius: 10,
         marginHorizontal: 10,
+        marginTop: 10,
     },
     pressable: {
         borderRadius: 10,
-        paddingRight: 10,
         elevation: 5,
-        width: 120,
+        flexDirection: 'row',
     },
     image: {
-        width: 120,
-        height: 120,
+        width: 80,
+        height: 80,
+        resizeMode: 'contain',
         backgroundColor: 'rgba(45, 252, 171, 0.3)',
         borderRadius: 5,
     },
     content: {
-        width: 120,
-        padding: 5,
+        flex: 1,
+        padding: 10,
         height: 80,
+        justifyContent: 'space-around',
 
     },
     title: {
         fontFamily: 'sans-serif',
-        fontWeight: 'bold',
-        color: '#ffffff'
-
+        fontWeight: '700',
+        fontSize: 16,
+        width: null,
+        color: '#ffffff',
     },
     subtitle: {
         fontFamily: 'sans-serif',
-        color: '#9c9c9c'
-
-
+        color: '#9c9c9c',
+        fontSize: 12,
     },
+
 })
 
-export default ItemCourseHome;
+export default ItemPack;

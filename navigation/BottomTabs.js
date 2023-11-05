@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { NavigationContainer, DarkTheme, DefaultTheme, useTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Button, useColorScheme } from 'react-native';
+import { Button, Pressable, useColorScheme } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import Home from '../screens/Home'
 import Packs from '../screens/Packs'
+import PressableCustom from '../components/PressableCustom'
+import HomeStacks from './HomeStacks';
 
 const Tab = createBottomTabNavigator();
 const lightTheme = {
@@ -31,13 +32,13 @@ export default function BottomTabs() {
                 initialRouteName="Home" // khoi tao route "Danh sách công việc"
                 backBehavior="history">
                 <Tab.Screen
-                    options={({ navigation, route }) => ({
+                    options={{
                         tabBarLabel: 'Home',
+                        headerShown: false,
                         tabBarIcon: ({ color }) => (
                             <MaterialCommunityIcons name="home-outline" color={color} size={26} />
                         ),
-                        headerRight: (() => (<Button title='switch' onPress={() => { }}></Button>))
-                    })} name="Home" component={Home} />
+                    }} name="HomeStacks" component={HomeStacks} />
 
                 <Tab.Screen
                     options={({ navigation, route }) => ({
@@ -51,3 +52,6 @@ export default function BottomTabs() {
         </NavigationContainer>
     );
 }
+
+
+
