@@ -83,7 +83,7 @@ export default function Home({ navigation }) {
           <Stat
             count={0}
             title="Current Streak"
-            onPress={() => navigation.navigate('Player')} //test
+            onPress={() => navigation.navigate('Player')} //test screen not comfirm
 
           ></Stat>
           <Stat

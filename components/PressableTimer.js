@@ -1,23 +1,25 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Pressable } from 'react-native'
-import PressableTimer from './PressableTimer'
 
-
-
-export default function ListDuration({ data, onPress }) {
+export default function PressableTimer({onPress, title, value}) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.tittle}>PICK A NARRATOR & DURATION</Text>
-            {data.map((elem) => (
-                <View style={styles.timerRow}>
-                    <Text style={styles.textTimerRow}>{elem.author}</Text>
-                    <View style={styles.listTimerRow}>
-                        {[...(elem.dataTime)].map((elem) => <PressableTimer title={elem.title} value={elem.value}></PressableTimer>)}
-                    </View>
-                </View>
-            ))}
-        </View>
+        <Pressable
+            android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
+            onPress={onPress}
+            style={({ pressed }) => [
+                {
+                    borderRadius: 10,
+                    backgroundColor: pressed ? '#ffffff' : 'rgba(34, 35, 39, 0.84)',
+                },
+                styles.pressable,
+            ]}
+        >
+            {({ pressed }) => (
+                <Text style={[styles.textTitleTimer, { color: pressed ? '#000000' : '#ffffff' }]}
+                >
+                    {title}
+                </Text>)}
+        </Pressable>
     )
 }
 
@@ -65,5 +67,4 @@ const styles = StyleSheet.create({
         fontSize: 16,
         alignSelf: 'center',
     },
-
 })
