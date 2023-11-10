@@ -1,12 +1,16 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import ListAuthorDuration from '../components/ListAuthorDuration'
 
 
 export default function Player({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={{color: 'white'}}>Player</Text>
+      <Image
+        source={require('../assets/backgroundPlayer.png')}
+        style={styles.image}
+      />
+      <Text style={{ color: 'white' }}>Player</Text>
     </View>
   )
 }
@@ -14,6 +18,12 @@ export default function Player({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
   },
   categoryContainer: {
     flex: 1,

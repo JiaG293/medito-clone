@@ -11,17 +11,16 @@ export default function DownloadTimer({ data, onPress, author, time }) {
     const handleToggle = () => {
         setIsOn(!isOn);
         onPress
-      };
+    };
 
     return (
         <View style={styles.container}>
             <Text style={styles.tittle}>DOWNLOAD</Text>
             <View style={styles.downloadButton}>
                 <Text style={styles.textTitleTimer}>{author + " - " + time}</Text>
-                <Pressable onPress={handleToggle} style={{marginLeft: 50}}>
-                    {() => (isOn ? 
-                    <MaterialCommunityIcons name="download-circle-outline" color='#ffffff' size={26} />
-                    : <MaterialCommunityIcons name="close-circle" color='#ffffff' size={26} />
+                <Pressable onPress={handleToggle} style={{ marginLeft: 50 }}>
+                    {() => (isOn ? <MaterialCommunityIcons name="close-circle" color='#ffffff' size={26} />
+                        : <MaterialCommunityIcons name="download-circle-outline" color='#ffffff' size={26} />
                     )}
                 </Pressable>
             </View>
