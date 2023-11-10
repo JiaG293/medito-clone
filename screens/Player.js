@@ -1,16 +1,59 @@
-import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import ListAuthorDuration from '../components/ListAuthorDuration'
+import React, { useState } from 'react'
+import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
+
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import ProgressBarPlayer from '../components/ProgressBarPlayer';
 
 
 export default function Player({ navigation }) {
+  const [isOn, setIsOn] = useState(false);
+
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  };
+
   return (
     <View style={styles.container}>
-      <Image
+      <ImageBackground
         source={require('../assets/backgroundPlayer.png')}
         style={styles.image}
-      />
-      <Text style={{ color: 'white' }}>Player</Text>
+      >
+        <View style={styles.content}>
+          <Text style={styles.textTitle}> flaskdjflsfsdfkdfjlk</Text>
+        </View>
+        <View style={styles.controller}>
+          <Pressable
+            onPress={() => handleToggle()}
+            style={styles.playerButton}
+          >
+            {() => (<MaterialCommunityIcons
+              name={isOn ? 'pause' : 'play'}
+              color='#ffffff'
+              size={26}
+            />)}
+          </Pressable>
+          <Pressable
+            android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
+            onPress={() => { }}
+            style={({ pressed }) => [
+              {
+                backgroundColor: pressed ? '#rgba(34, 35, 39, 0.3)' : 'rgba(34, 35, 39, 0.6)',
+              },
+              styles.pressableSounds,
+            ]}
+          >
+            <MaterialCommunityIcons
+              name='music-note-outline'
+              color='#ffffff'
+              size={26}
+            />
+            <Text style={styles.textSoundConfig}>Sounds</Text>
+          </Pressable>
+        </View>
+        <View style={styles.progressBar}>
+          <ProgressBarPlayer></ProgressBarPlayer>
+        </View>
+      </ImageBackground>
     </View>
   )
 }
@@ -18,34 +61,52 @@ export default function Player({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
+  },
+  content: {
+    flex: 0.3,
+    marginTop: 30,
+  },
+  controller: {
+    flex: 0.6,
+    alignItems: 'center',
   },
   image: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
   },
-  categoryContainer: {
-    flex: 1,
-    marginVertical: 20,
+  playerButton: {
+    backgroundColor: '#5c5c55',
+    borderRadius: 25,
+    width: 80,
+    height: 80,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  categoryRow: {
+  textTitle: {
+    fontFamily: 'sans-serif',
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: '700',
+    alignSelf: 'center'
+  },
+  textSoundConfig: {
+    fontFamily: 'sans-serif',
+    color: '#ffffff',
+    fontSize: 14,
+  },
+  pressableSounds: {
     flexDirection: 'row',
-  },
-  coursesContainer: {
-    flex: 3,
-  },
-  statsContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'rgba(34, 35, 39, 0.84)',
-    borderRadius: 10,
+    width: 100,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    marginVertical: 20,
-    marginHorizontal: 10,
+    padding: 10,
+    borderRadius: 5,
+    marginVertical: 30
   },
-  quotesContainer: {
-    flex: 1,
-  }
+
+  progressBar: {
+
+  },
+
 })
