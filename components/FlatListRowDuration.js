@@ -17,7 +17,7 @@ export default function FlatListRowDuration({ data }) {
                 horizontal={true}
                 data={data}
                 renderItem={({ item }) => (
-                    <PressableTimer title={item.title + " min"} value={item.value}></PressableTimer>
+                    <PressableTimer title={item.title + " min"} value={item.value} id={item.id}></PressableTimer>
                 )}
                 keyExtractor={item => item.id}
                 initialNumToRender={4}

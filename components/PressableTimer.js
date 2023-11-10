@@ -1,21 +1,27 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function PressableTimer({onPress, title, value}) {
+    const [isOn, setIsOn] = useState(false);
+
+    const handleToggle = () => {
+        setIsOn(!isOn);
+      };
+
     return (
         <Pressable
             android_ripple={{ color: 'rgba(187, 187, 187, 1)', borderless: false }}
-            onPress={onPress}
+            onPress={handleToggle}
             style={({ pressed }) => [
                 {
                     borderRadius: 10,
-                    backgroundColor: pressed ? '#ffffff' : 'rgba(34, 35, 39, 0.84)',
+                    backgroundColor: isOn ? '#ffffff' : 'rgba(34, 35, 39, 0.84)',
                 },
                 styles.pressable,
             ]}
         >
             {({ pressed }) => (
-                <Text style={[styles.textTitleTimer, { color: pressed ? '#000000' : '#ffffff' }]}
+                <Text style={[styles.textTitleTimer, { color: isOn ? '#000000' : '#ffffff' }]}
                 >
                     {title}
                 </Text>)}

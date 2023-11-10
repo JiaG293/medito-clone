@@ -48,7 +48,10 @@ const styles = StyleSheet.create({
     },
     pressable: {
         elevation: 5,
-        flex: 1,
+        marginVertical: 10,
+        flex: 1
+        
+
 
     },
     image: {

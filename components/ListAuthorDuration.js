@@ -24,6 +24,7 @@ export default function ListAuthorDuration({ data, onPress }) {
                     <PressableTimer title='15 min' value='15'></PressableTimer>
                 </View>
             </View> */}
+            
 
         </View>
     )
@@ -44,9 +45,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     timerRow: {
-        flex: 1,
         marginVertical: 10,
-
     },
     textTimerRow: {
         fontFamily: 'sans-serif',
