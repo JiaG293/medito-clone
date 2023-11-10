@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, FlatList, Pressable, SafeAreaView } from 'react
 import ITEMDETAILS from '../data/ItemDetails'
 import BannerPack from '../components/BannerPack'
 import ItemDetails from '../components/ItemDetails'
-import ListDuration from '../components/ListDuration'
+import ListAuthorDuration from '../components/ListAuthorDuration'
+import DURATIONS from '../data/DurationsData'
 
 
 export default function Timer({ navigation }) {
@@ -45,7 +46,7 @@ export default function Timer({ navigation }) {
         </BannerPack>
       </View>
       <SafeAreaView style={{ flex: 1 }}>
-        <FlatList
+       {/*  <FlatList
           data={ITEMDETAILS[0].dataDetails}
           renderItem={({ item }) => (
             <ItemDetails
@@ -70,8 +71,8 @@ export default function Timer({ navigation }) {
           keyExtractor={item => item.id}
           initialNumToRender={10}
         >
-        </FlatList>
-        <ListDuration></ListDuration>
+        </FlatList> */}
+        <ListAuthorDuration data={DURATIONS}></ListAuthorDuration>
       </SafeAreaView>
     </View>
   )

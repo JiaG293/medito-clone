@@ -2,21 +2,29 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Pressable } from 'react-native'
 import PressableTimer from './PressableTimer'
+import FlatListRowDuration from './FlatListRowDuration'
 
-
-
-export default function ListDuration({ data, onPress }) {
+export default function ListAuthorDuration({ data, onPress }) {
     return (
         <View style={styles.container}>
             <Text style={styles.tittle}>PICK A NARRATOR & DURATION</Text>
             {data.map((elem) => (
-                <View style={styles.timerRow}>
+                <View style={styles.timerRow} key={elem.idAuthor}>
                     <Text style={styles.textTimerRow}>{elem.author}</Text>
-                    <View style={styles.listTimerRow}>
-                        {[...(elem.dataTime)].map((elem) => <PressableTimer title={elem.title} value={elem.value}></PressableTimer>)}
-                    </View>
+                    <FlatListRowDuration data={elem.dataTime}></FlatListRowDuration>
                 </View>
             ))}
+
+            {/* <View style={styles.timerRow} key={data.idAuthor}>
+                <Text style={styles.textTimerRow}>jiag</Text>
+                <FlatListRowDuration data={data.dataTime}></FlatListRowDuration>
+                <View style={styles.listTimerRow}>
+                    <PressableTimer title='15 min' value='15'></PressableTimer>
+                    <PressableTimer title='15 min' value='15'></PressableTimer>
+                    <PressableTimer title='15 min' value='15'></PressableTimer>
+                </View>
+            </View> */}
+
         </View>
     )
 }
