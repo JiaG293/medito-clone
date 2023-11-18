@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import React, { useState, useEffect } from 'react';
 
-export default function ListAuthorDuration({ data }) {
+export default function ListAuthorDuration({ data, onSelect }) {
     const [selectedItems, setSelectedItems] = useState({});
 
     const handleItemSelected = (id, listId) => {
@@ -12,8 +12,9 @@ export default function ListAuthorDuration({ data }) {
             updatedSelectedItems[listId] = id;
         }
         setSelectedItems(updatedSelectedItems);
+
+        onSelect(updatedSelectedItems);
     };
-    useEffect(() => console.log(selectedItems), [selectedItems])
 
     const FlatListRowDuration = ({ dataList, listId }) => {
         const renderItem = ({ item }) => (

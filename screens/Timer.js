@@ -9,6 +9,12 @@ import DownloadTimer from '../components/DownloadTimer'
 
 
 export default function Timer({ navigation }) {
+  const [selectedData, setSelectedData] = useState({});
+
+  const handleSelectedDataDuration = (data) => {
+    setSelectedData(data);
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -31,7 +37,7 @@ export default function Timer({ navigation }) {
           </BannerPack>
         </View>
         <SafeAreaView style={{ flex: 1 }}>
-          <ListAuthorDuration data={DURATIONS}></ListAuthorDuration>
+          <ListAuthorDuration data={DURATIONS} onSelect={handleSelectedDataDuration}></ListAuthorDuration>
         </SafeAreaView>
         <View style={styles.download}>
           <DownloadTimer author='JiaG' time='9'></DownloadTimer>
