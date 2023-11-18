@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import BottomTabs from './navigation/BottomTabs';
-import StackNav from './navigation/HomeStacks';
 
 
 export default function App() {
