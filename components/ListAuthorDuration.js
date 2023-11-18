@@ -1,33 +1,61 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Pressable } from 'react-native'
-import PressableTimer from './PressableTimer'
-import FlatListRowDuration from './FlatListRowDuration'
+import { FlatList, StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
 
-export default function ListAuthorDuration({ data, onPress }) {
+export default function ListAuthorDuration({ data }) {
+    const [selectedItems, setSelectedItems] = useState({});
+
+    const handleItemSelected = (id, listId) => {
+        const updatedSelectedItems = { ...selectedItems };
+        if (updatedSelectedItems[listId] === id) {
+            delete updatedSelectedItems[listId];
+        } else {
+            updatedSelectedItems[listId] = id;
+        }
+        setSelectedItems(updatedSelectedItems);
+    };
+    useEffect(() => console.log(selectedItems), [selectedItems])
+
+    const FlatListRowDuration = ({ dataList, listId }) => {
+        const renderItem = ({ item }) => (
+            <TouchableOpacity
+                style={[
+                    styles.pressable,
+                    { backgroundColor: item.id === selectedItems[listId] ? '#ffffff' : 'rgba(34, 35, 39, 0.84)' },
+                ]}
+                onPress={() => handleItemSelected(item.id, listId)}
+            >
+                <Text
+                    style={[styles.textTitleTimer, { color: item.id === selectedItems[listId] ? '#000000' : '#ffffff' }]}
+                >
+                    {item.title + ' min'}
+                </Text>
+            </TouchableOpacity>
+        );
+
+        return (
+            <SafeAreaView>
+                <FlatList
+                    horizontal={true}
+                    data={dataList}
+                    renderItem={renderItem}
+                    keyExtractor={(item) => item.id}
+                    initialNumToRender={4}
+                />
+            </SafeAreaView>
+        );
+    };
+
     return (
         <View style={styles.container}>
-            <Text style={styles.tittle}>PICK A NARRATOR & DURATION</Text>
+            <Text style={styles.title}>PICK A NARRATOR & DURATION</Text>
             {data.map((elem) => (
                 <View style={styles.timerRow} key={elem.idAuthor}>
                     <Text style={styles.textTimerRow}>{elem.author}</Text>
-                    <FlatListRowDuration data={elem.dataTime}></FlatListRowDuration>
+                    <FlatListRowDuration dataList={elem.dataTime} listId={elem.idAuthor} />
                 </View>
             ))}
-
-            {/* <View style={styles.timerRow} key={data.idAuthor}>
-                <Text style={styles.textTimerRow}>jiag</Text>
-                <FlatListRowDuration data={data.dataTime}></FlatListRowDuration>
-                <View style={styles.listTimerRow}>
-                    <PressableTimer title='15 min' value='15'></PressableTimer>
-                    <PressableTimer title='15 min' value='15'></PressableTimer>
-                    <PressableTimer title='15 min' value='15'></PressableTimer>
-                </View>
-            </View> */}
-            
-
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -37,7 +65,7 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 10,
     },
-    tittle: {
+    title: {
         fontFamily: 'sans-serif',
         color: '#9c9c9c',
         fontSize: 16,
@@ -56,7 +84,6 @@ const styles = StyleSheet.create({
     listTimerRow: {
         flexDirection: 'row',
         marginTop: 10,
-
     },
     pressable: {
         borderRadius: 20,
@@ -64,7 +91,7 @@ const styles = StyleSheet.create({
         width: 70,
         height: 50,
         marginHorizontal: 10,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     textTitleTimer: {
         fontFamily: 'sans-serif',
@@ -72,5 +99,4 @@ const styles = StyleSheet.create({
         fontSize: 16,
         alignSelf: 'center',
     },
-
-})
+});

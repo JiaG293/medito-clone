@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { Pressable } from 'react-native'
-import PressableTimer from './PressableTimer'
-import FlatListRowDuration from './FlatListRowDuration'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 export default function DownloadTimer({ data, onPress, author, time }) {

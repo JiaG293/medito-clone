@@ -1,14 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 import Slider from '@react-native-community/slider'
 import Modal from 'react-native-modal'
-
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-
 import { Audio } from 'expo-av';
 import { TouchableOpacity } from 'react-native';
-import VolumeControl from '../components/VolumeControl'
 import BackgroundSounds from '../components/BackgroundSounds'
+import ProgressBar from '../components/ProgressBar'
+
+
+const CustomSlider = memo(({ value, onValueChange, disabled }) => {
+  return (
+    <Slider
+      style={styles.slider}
+      minimumValue={0}
+      maximumValue={audioState.duration}
+      value={value}
+      onValueChange={onValueChange}
+      onSlidingComplete={onValueChange}
+      disabled={disabled}
+      minimumTrackTintColor="#C8BA9D"
+      maximumTrackTintColor="#000000"
+      thumbTintColor='#C8BA9D'
+    />
+  );
+});
 
 
 export default function Player({ navigation, route }) {
@@ -84,6 +100,7 @@ export default function Player({ navigation, route }) {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -123,17 +140,12 @@ export default function Player({ navigation, route }) {
           </Pressable>
         </View>
         <View style={styles.progressBar}>
-          <Slider
-            style={styles.slider}
-            minimumValue={0}
-            maximumValue={audioState.duration}
+          <ProgressBar
             value={audioState.position}
             onValueChange={(value) => setAudioState({ ...audioState, position: value })}
             onSlidingComplete={(value) => handleSliderChange(value)}
             disabled={!audioState.sound}
-            minimumTrackTintColor="#C8BA9D" //Mau ben trai con tro
-            maximumTrackTintColor="#000000" // mau ben phai con tro
-            thumbTintColor='#C8BA9D'
+            duration={audioState.duration}
           />
           <View style={styles.timeContainer}>
             <Text style={styles.textTimer}>{getPositionMinutesSeconds(audioState.position)}</Text>
@@ -159,7 +171,6 @@ export default function Player({ navigation, route }) {
               </TouchableOpacity>
             </View>
             <BackgroundSounds data={dataAudio} defaultAudioId="1"></BackgroundSounds>
-            
           </View>
         </Modal>
       </ImageBackground>

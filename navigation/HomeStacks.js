@@ -20,7 +20,7 @@ const Stack = createNativeStackNavigator();
 export default function HomeStacks({ navigation }) {
     return (
         <Stack.Navigator
-            initialRouteName="Player" // khoi tao route "Danh sách công việc"
+            initialRouteName="Home" // khoi tao route "Danh sách công việc"
             backBehavior="history"
         >
 
