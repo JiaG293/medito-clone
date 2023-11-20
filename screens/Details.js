@@ -1,24 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View, FlatList, Pressable, SafeAreaView } from 'react-native'
 import ITEMDETAILS from '../data/ItemDetails'
 import BannerPack from '../components/BannerPack'
 import ItemDetails from '../components/ItemDetails'
 
 
-export default function Details({ navigation }) {
-
+export default function Details({ navigation, route }) {
+  console.log("data from screen home: \n", route.params.listCoursesDetail);
+  
+  const [details, setDetails] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
 
-  const handleOnPress = contact => {
+  useEffect(() => {
+    setDetails(route.params?.listCoursesDetail);
+  }, [])
+
+  const handleOnPress = selected => {
 
     if (selectedItems.length) {
-      return selectItems(contact);
+      return selectItems(selected);
     }
 
     console.log('pressed');
   };
 
-  const getSelected = contact => selectedItems.includes(contact.id);
+  const getSelected = selected => selectedItems.includes(selected.id);
 
   const deSelectItems = () => setSelectedItems([]);
 
@@ -36,8 +42,8 @@ export default function Details({ navigation }) {
     <View style={styles.container}>
       <View style={styles.banner}>
         <BannerPack
-          title={ITEMDETAILS[0].title}
-          subtile={ITEMDETAILS[0].subtile}
+          title={details.titleItemCourses}
+          subtile={details.contentItemCourses}
           onPress={() => deSelectItems()}
           image='50x50png'
         >
@@ -45,18 +51,21 @@ export default function Details({ navigation }) {
       </View>
       <SafeAreaView style={{ flex: 1 }}>
         <FlatList
-          data={ITEMDETAILS[0].dataDetails}
-          renderItem={({ item }) => (
+          data={details.listTimerDetails} //data
+          renderItem={({ item, index }) => (
             <ItemDetails
               icon='play-circle'
-              id={item.id}
+              id={item.idTimer}
               title={item.title}
               image={item.image}
-              subtitle={item.time}
+              subtitle={item.content}
               onPress={() => {
                 navigation.navigate('Timer', {
-                  itemId: item.id,
-                  itemData: item.title,
+                  itemTimerDetails: {...details.listTimerDetails[index]},
+                  // itemId: item.id,
+                  // itemData: item.title,
+                  titleItemCourses: details.titleItemCourses,
+                  contentItemCourses: details.contentItemCourses
                 })
                 handleOnPress(item);
               }

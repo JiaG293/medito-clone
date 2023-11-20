@@ -1,0 +1,523 @@
+{
+    "COURSES": [
+        {
+            "idCourses": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+            "title": "Courses 1",
+            "stepSubTitle": "Step courses 1",
+            "image": "50x50.png",
+            "listCoursesDetail": [
+                {
+                    "id": "bd7acbea-c1b1-46c2-aed5",
+                    "title": "Item 1 of Course",
+                    "descriptions": "descriptions of the first item",
+                    "image": "50x50.png",
+                    "timeSummary": "13 min",
+                    "author": "John smith",
+                    "durations": [
+                        {
+                            "idAuthor": "7acbea21fadh",
+                            "author": "John Smith",
+                            "timeDetail": [
+                                {
+                                    "idTimeDetail": "aadkh14kdhf1",
+                                    "time": 5
+                                },
+                                {
+                                    "idTimeDetail": "aadkh14kdhf2",
+                                    "time": 10
+                                },
+                                {
+                                    "idTimeDetail": "aadkh14kdhf3",
+                                    "time": 15
+                                }
+                            ]
+
+                        },
+                        {
+                            "idAuthor": "7acbea21fadh12",
+                            "author": "John Wick",
+                            "timeDetail": [
+                                {
+                                    "idTimeDetail": "aadkh14kdhf11",
+                                    "time": 10,
+                                    "urlAudio": "http://localhost:5555/Arti.mp3"
+                                },
+                                {
+                                    "idTimeDetail": "aadkh14kdhf22",
+                                    "time": 20,
+                                    "urlAudio": "http://localhost:5555/Arti.mp3"
+                                },
+                                {
+                                    "idTimeDetail": "aadkh14kdhf33",
+                                    "time": 30,
+                                    "urlAudio": "http://localhost:5555/Arti.mp3"
+                                }
+                            ]
+
+                        }
+                    ]
+                },
+                {
+                    "id": "3ac68afc-c605-48d3-a4f8",
+                    "title": "Second Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick"
+                }
+            ]
+        }
+    ],
+
+    "DURATIONS": [
+        {
+            "idAuthor": 113,
+            "author": "John Smith",
+            "dataTime": [
+                {
+                    "id": 1,
+                    "title": "5",
+                    "value": "5"
+                },
+                {
+                    "id": 2,
+                    "title": "10",
+                    "value": "10"
+                },
+                {
+                    "id": 3,
+                    "title": "15",
+                    "value": "15"
+                },
+                {
+                    "id": 4,
+                    "title": "20",
+                    "value": "20"
+                },
+                {
+                    "id": 5,
+                    "title": "30",
+                    "value": "30"
+                }
+            ]
+        },
+        {
+            "idAuthor": 134,
+            "author": "JiaG",
+            "dataTime": [
+                {
+                    "id": 1,
+                    "title": "5",
+                    "value": "5"
+                },
+                {
+                    "id": 2,
+                    "title": "10",
+                    "value": "10"
+                },
+                {
+                    "id": 3,
+                    "title": "15",
+                    "value": "15"
+                }
+            ]
+        },
+        {
+            "idAuthor": 119,
+            "author": "JohnWick",
+            "dataTime": [
+                {
+                    "id": 1,
+                    "title": "5",
+                    "value": "5"
+                },
+                {
+                    "id": 2,
+                    "title": "10",
+                    "value": "10"
+                },
+                {
+                    "id": 3,
+                    "title": "15",
+                    "value": "15"
+                },
+                {
+                    "id": 4,
+                    "title": "20",
+                    "value": "20"
+                },
+                {
+                    "id": 5,
+                    "title": "30",
+                    "value": "30"
+                }
+            ]
+        },
+        {
+            "idAuthor": 117,
+            "author": "Walter White",
+            "dataTime": [
+                {
+                    "id": 1,
+                    "title": "5",
+                    "value": "5"
+                },
+                {
+                    "id": 2,
+                    "title": "10",
+                    "value": "10"
+                },
+                {
+                    "id": 3,
+                    "title": "15",
+                    "value": "15"
+                },
+                {
+                    "id": 4,
+                    "title": "20",
+                    "value": "20"
+                },
+                {
+                    "id": 5,
+                    "title": "35",
+                    "value": "35"
+                }
+            ]
+        },
+        {
+            "idAuthor": 1199,
+            "author": "Clara",
+            "dataTime": [
+                {
+                    "id": 1,
+                    "title": "5",
+                    "value": "5"
+                },
+                {
+                    "id": 2,
+                    "title": "10",
+                    "value": "10"
+                },
+                {
+                    "id": 3,
+                    "title": "15",
+                    "value": "15"
+                },
+                {
+                    "id": 4,
+                    "title": "20",
+                    "value": "20"
+                },
+                {
+                    "id": 5,
+                    "title": "30",
+                    "value": "30"
+                }
+            ]
+        }
+    ],
+    "ITEMDETAILS": [
+        {
+            "idItem": "32lslewl-ek2kfj-2431lkd92j-flskfs",
+            "title": "Meditation for Sleep",
+            "subtile": "These guided meditations and sounds will ease you into a peaceful and restful sleep.",
+            "dataDetails": [
+                {
+                    "id": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+                    "title": "First Item subtile",
+                    "subtile": "subtile subtile subtile",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John smith"
+                },
+                {
+                    "id": "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+                    "title": "Second Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick"
+                },
+                {
+                    "id": "58694a0f-3da1-471f-bd96-145571e29d72",
+                    "title": "Third Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "bd7acbea-c1b1-46c2-aed5212abb2228ba",
+                    "title": "Four Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "3ac68afc-c605-48d3-a4f82121291aa97f63",
+                    "title": "five Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "58694a0f-3da1-471f-bd96-12121229d72",
+                    "title": "Six Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "58694a0f-3da1-471f-bd96-12121219d72",
+                    "title": "Seven",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "3a218afc-c605-48d3-a4f82121291aa97f63",
+                    "title": "five Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "5841694f-3da1-471f-bd96-12121229d72",
+                    "title": "Six Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "69124a0f-3da1-471f-bd96-121321g9d72",
+                    "title": "Seven",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "3ac68afc-c605-48d3-a4f82d1291aa97f63",
+                    "title": "five Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "58694a0f-3da1-471f-bd96-12431229d72",
+                    "title": "ten",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "58694a0f-3da1-471f-bd96-121gf19d72",
+                    "title": "Eleven",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "3ac68afc-c605-4g42d3-a4f82d1291aa97f63",
+                    "title": "five Item",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "58694a0f-3da1-4f-fdbd96-12431229d72",
+                    "title": "ten",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                },
+                {
+                    "id": "58694dsf-3da1-471f-bd96-121gf19d72",
+                    "title": "Eleven",
+                    "subtile": "subtile ",
+                    "image": "50x50.png",
+                    "time": "13 min",
+                    "author": "John Wick smith"
+                }
+            ]
+        }
+    ],
+    "PACKS": [
+        {
+            "id": "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+            "title": "First Item subtile",
+            "subtile": "subtile subtile subtile",
+            "image": "50x50.png"
+        },
+        {
+            "id": "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+            "title": "Second Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694a0f-3da1-471f-bd96-145571e29d72",
+            "title": "Third Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "bd7acbea-c1b1-46c2-aed5212abb2228ba",
+            "title": "Four Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "3ac68afc-c605-48d3-a4f82121291aa97f63",
+            "title": "five Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694a0f-3da1-471f-bd96-12121229d72",
+            "title": "Six Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694a0f-3da1-471f-bd96-12121219d72",
+            "title": "Seven",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "3a218afc-c605-48d3-a4f82121291aa97f63",
+            "title": "five Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "5841694f-3da1-471f-bd96-12121229d72",
+            "title": "Six Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "69124a0f-3da1-471f-bd96-121321g9d72",
+            "title": "Seven",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "3ac68afc-c605-48d3-a4f82d1291aa97f63",
+            "title": "five Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694a0f-3da1-471f-bd96-12431229d72",
+            "title": "ten",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694a0f-3da1-471f-bd96-121gf19d72",
+            "title": "Eleven",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "3ac68afc-c605-4g42d3-a4f82d1291aa97f63",
+            "title": "five Item",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694a0f-3da1-4f-fdbd96-12431229d72",
+            "title": "ten",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        },
+        {
+            "id": "58694dsf-3da1-471f-bd96-121gf19d72",
+            "title": "Eleven",
+            "subtile": "subtile ",
+            "image": "50x50.png"
+        }
+    ],
+    "SLEEPFOLDER": [
+        {
+            "titleCategory": "Sleep",
+            "subCategory": "Get a peaceful night rest",
+            "imageCategory": "50x50.png",
+            "dataCategory": [
+                {
+                    "id": "bd7acbea-c1b1-46c2-aed5-3ad5bb28ba",
+                    "titleFolder": "Meditation for Sleep"
+                },
+                {
+                    "id": "bd7abea-c1b1-46c2-aed5-3ad53ab3ba",
+                    "titleFolder": "Sleep Stories"
+                },
+                {
+                    "id": "bd7acbea-1b1-46c2-aed5-3a1b28ba",
+                    "titleFolder": "Nature Sounds"
+                },
+                {
+                    "id": "bd7acbea-cb1-46c2-aed5-3ad12f28ba",
+                    "titleFolder": "Meditative Music"
+                },
+                {
+                    "id": "bd7acbea-cb1-46c2-aed5-3ad312f2ba",
+                    "titleFolder": "Meditative Music"
+                },
+                {
+                    "id": "bd7acbea-c1b1-46-aed5-3ad12f28ba",
+                    "titleFolder": "Meditative Music"
+                }
+            ]
+        }
+    ],
+    "SONGS": [
+        {
+            "id": 1,
+            "title": "19th Floor",
+            "artist": "Bobby Richards",
+            "artwork": "https://placehold.co/600x400",
+            "url": "require('../assets/Arti.mp3')"
+        },
+        {
+            "id": 2,
+            "title": "Awful",
+            "artist": "josh pan",
+            "artwork": "https://placehold.co/600x400",
+            "url": "require('../assets/Arti.mp3')"
+        },
+        {
+            "id": 3,
+            "title": "Something is Going On",
+            "artist": "Godmode",
+            "artwork": "https://placehold.co/600x400",
+            "url": "require('../assets/Arti.mp3')"
+        },
+        {
+            "id": 4,
+            "title": "Book The Rental Wit It",
+            "artist": "RAGE",
+            "artwork": "https://placehold.co/600x400",
+            "url": "require('../assets/Arti.mp3')"
+        },
+        {
+            "id": 5,
+            "title": "Crimson Fly",
+            "artist": "Huma-Huma",
+            "url": "require('../assets/Arti.mp3')"
+        }
+    ]
+}

@@ -7,14 +7,22 @@ import DURATIONS from '../data/DurationsData'
 import DownloadTimer from '../components/DownloadTimer'
 
 
-export default function Timer({ navigation }) {
-  const [dataTimer, setDataTimer] = useState({});
-  const [selectedData, setSelectedData] = useState({});
+export default function Timer({ navigation, route }) {
+  console.log("data from screen details:\n", route.params?.itemTimerDetails);
+  const [selectedDataId, setSelectedDataId] = useState({});
 
-  const handleSelectedDataDuration = (data) => {
-    setSelectedData(data);
-    console.log(dataTimer);
+  const handleSelectedDataDuration = (id) => {
+    route.params.itemTimerDetails.durations.filter((elem) => {
+      if (elem.idAuthor == Object.keys(id)) {
+        elem.timeDetail.filter((elemm) => {
+          if (elemm.idTimeDetail == Object.values(id))
+            setSelectedDataId(elemm)
+        })
+      }
+    })
   };
+
+  useEffect(() => console.log("data timer selected: ", selectedDataId), [selectedDataId])
 
   /* const ITEMDETAILS_URL = 'http://localhost:3000/ITEMDETAILS';
   const DURATIONS_URL = 'http://localhost:3000/DURATIONS';
@@ -52,48 +60,51 @@ useEffect(() => {
 
 
 
-return (
-  <View style={styles.container}>
-    <ScrollView
-      scrollEnabled={true}
-      style={styles.container1}
-      scrollIndicatorInsets={{
-        bottom: 50,
-      }}
-      contentContainerStyle={{
-        marginBottom: 100,
-      }}
-    >
-      <View style={styles.banner}>
-        <BannerPack
-          title={ITEMDETAILS[0].title}
-          subtile={ITEMDETAILS[0].subtile}
-          onPress={() => { }}
-          image='50x50png'
-        >
-        </BannerPack>
-      </View>
-      <SafeAreaView style={{ flex: 1 }}>
-        <ListAuthorDuration data={DURATIONS} onSelect={handleSelectedDataDuration}></ListAuthorDuration>
-      </SafeAreaView>
-      <View style={styles.download}>
-        <DownloadTimer author='JiaG' time='9'></DownloadTimer>
-      </View>
+  return (
+    <View style={styles.container}>
+      <ScrollView
+        scrollEnabled={true}
+        style={styles.container1}
+        scrollIndicatorInsets={{
+          bottom: 50,
+        }}
+        contentContainerStyle={{
+          marginBottom: 100,
+        }}
+      >
+        <View style={styles.banner}>
+          <BannerPack
+            title={route.params.itemTimerDetails.title}
+            subtile={route.params.itemTimerDetails.content}
+            onPress={() => { }}
+            image='50x50png'
+          >
+          </BannerPack>
+        </View>
+        <SafeAreaView style={{ flex: 1 }}>
+          <ListAuthorDuration data={route.params.itemTimerDetails.durations} onSelect={handleSelectedDataDuration}></ListAuthorDuration>
+        </SafeAreaView>
+        <View style={styles.download}>
+          <DownloadTimer author='JiaG' time='9'></DownloadTimer>
+        </View>
 
-    </ScrollView>
+      </ScrollView>
 
-    <Pressable
-      android_ripple={{ color: '#9eb9f7', borderless: false }}
-      onPress={() => navigation.navigate('Player')}
-      style={({ pressed }) => [
-        { backgroundColor: pressed ? '#9eb9f7' : '#f4f5b0' }
-        , styles.beginButton
-      ]}
-    >
-      <Text style={styles.textBeginButton}>Begin</Text>
-    </Pressable>
-  </View>
-)
+      <Pressable
+        android_ripple={{ color: '#9eb9f7', borderless: false }}
+        onPress={() => navigation.navigate('Player', {
+          dataPlayer: {...selectedDataId},
+          titlePlaying: route.params?.itemTimerDetails.title
+        })}
+        style={({ pressed }) => [
+          { backgroundColor: pressed ? '#9eb9f7' : '#f4f5b0' }
+          , styles.beginButton
+        ]}
+      >
+        <Text style={styles.textBeginButton}>Begin</Text>
+      </Pressable>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({

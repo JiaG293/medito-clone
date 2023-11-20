@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, SafeAreaView, StyleSheet, Text, View, ScrollView } from 'react-native';
 import ButtonCategory from '../components/ButtonCategory';
 import ItemCourseHome from '../components/ItemCourseHome';
@@ -8,7 +8,42 @@ import Quote from '../components/Quote';
 import PressableCustom from '../components/PressableCustom';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function Home({ navigation }) {
+export default function Home({ navigation, route }) {
+  const [courses, setCourses] = useState([]);
+
+  const apiUrl = 'http://localhost:3000/COURSES'; // URL api endpoint
+
+  const requestOptions = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  async function fetchData(url, options = {}) {
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw new Error("Get data success")
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Get data fail:', error);
+      throw error;
+    }
+  }
+
+  useEffect(() => {
+    fetchData(apiUrl, requestOptions)
+      .then(data => {
+        setCourses(data)
+        console.log('Data from API:', data);
+      })
+      .catch(error => {
+        console.error('Get data fail:', error);
+      });
+  }, [])
+
   return (
     <View style={styles.container}>
       <ScrollView style={{ minHeight: 100, maxHeight: 1900 }}>
@@ -61,14 +96,14 @@ export default function Home({ navigation }) {
           <SafeAreaView style={{ flex: 1 }}>
             <FlatList
               horizontal={true}
-              data={COURSES}
-              renderItem={({ item }) => (
+              data={courses}
+              renderItem={({ item, index }) => (
                 <ItemCourseHome
-                  id={item.id}
-                  title={item.title}
-                  image={item.image}
-                  subtitle={item.subtile}
-                  onPress={() => navigation.navigate('Details')}
+                  id={item.idCourses}
+                  title={item.titleCourses}
+                  image={item.imageCourses}
+                  subtitle={item.subTitleCourses}
+                  onPress={() => navigation.navigate('Details', { listCoursesDetail: {...courses[index].listCoursesDetail} })}
                 >
                 </ItemCourseHome>
               )}

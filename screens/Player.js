@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react'
-import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Alert, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 import Slider from '@react-native-community/slider'
 import Modal from 'react-native-modal'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
@@ -44,8 +44,8 @@ export default function Player({ navigation, route }) {
 
 
   // Control audio
-  const loadAudio = async () => {
-    const { sound } = await Audio.Sound.createAsync(require('../assets/Arti.mp3'));
+  const loadAudio = async (audio, isUrl) => {
+    const { sound } = await Audio.Sound.createAsync(isUrl ? { uri: audio } : require('../assets/' + audio));
     const status = await sound.getStatusAsync();
     setAudioState(prevState => ({
       ...prevState,
@@ -90,8 +90,16 @@ export default function Player({ navigation, route }) {
   };
 
   useEffect(() => {
-    loadAudio();
+    let audio = route.params?.dataPlayer.urlAudio //'Arti.mp3'
+    if(audio == null){
+      Alert.alert("Cant not find audio")
+      console.log("Cant not find audio");
+    }else{
+      loadAudio(audio, audio.includes('http'));
+    }
+
   }, []);
+
 
   const getPositionMinutesSeconds = (milliseconds) => {
     const totalSeconds = milliseconds / 1000;
@@ -108,7 +116,7 @@ export default function Player({ navigation, route }) {
         style={styles.image}
       >
         <View style={styles.content}>
-          <Text style={styles.textTitle}> gdgdfgdg</Text>
+          <Text style={styles.textTitle}> {route.params?.titlePlaying ?? "NaN"}</Text>
         </View>
         <View style={styles.controller}>
           <Pressable

@@ -5,15 +5,24 @@ export default function ListAuthorDuration({ data, onSelect }) {
     const [selectedItems, setSelectedItems] = useState({});
 
     const handleItemSelected = (id, listId) => {
-        const updatedSelectedItems = { ...selectedItems };
-        if (updatedSelectedItems[listId] === id) {
-            delete updatedSelectedItems[listId];
+        const updatedSelectedItems = {};
+    
+        Object.keys(selectedItems).forEach(key => {
+            if (selectedItems[key] === id && key !== listId) {
+                updatedSelectedItems[key] = null;
+            }
+        });
+    
+        if (selectedItems[listId] === id) {
+            delete selectedItems[listId];
         } else {
             updatedSelectedItems[listId] = id;
         }
+    
         setSelectedItems(updatedSelectedItems);
-
-        onSelect(updatedSelectedItems);
+    
+        const selectedItemInfo = updatedSelectedItems[listId] ? { [listId]: updatedSelectedItems[listId] } : {};
+        onSelect(selectedItemInfo);
     };
 
     const FlatListRowDuration = ({ dataList, listId }) => {
@@ -21,14 +30,15 @@ export default function ListAuthorDuration({ data, onSelect }) {
             <TouchableOpacity
                 style={[
                     styles.pressable,
-                    { backgroundColor: item.id === selectedItems[listId] ? '#ffffff' : 'rgba(34, 35, 39, 0.84)' },
+                    { backgroundColor: item.idTimeDetail === selectedItems[listId] ? '#ffffff' : 'rgba(34, 35, 39, 0.84)' },
                 ]}
-                onPress={() => handleItemSelected(item.id, listId)}
+                onPress={() => handleItemSelected(item.idTimeDetail, listId)}
+            key={item.idTimeDetail}
             >
                 <Text
-                    style={[styles.textTitleTimer, { color: item.id === selectedItems[listId] ? '#000000' : '#ffffff' }]}
+                    style={[styles.textTitleTimer, { color: item.idTimeDetail === selectedItems[listId] ? '#000000' : '#ffffff' }]}
                 >
-                    {item.title + ' min'}
+                    {item.time + ' min'}
                 </Text>
             </TouchableOpacity>
         );
@@ -39,7 +49,7 @@ export default function ListAuthorDuration({ data, onSelect }) {
                     horizontal={true}
                     data={dataList}
                     renderItem={renderItem}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.idTimeDetail}
                     initialNumToRender={4}
                 />
             </SafeAreaView>
@@ -52,7 +62,7 @@ export default function ListAuthorDuration({ data, onSelect }) {
             {data.map((elem) => (
                 <View style={styles.timerRow} key={elem.idAuthor}>
                     <Text style={styles.textTimerRow}>{elem.author}</Text>
-                    <FlatListRowDuration dataList={elem.dataTime} listId={elem.idAuthor} />
+                    <FlatListRowDuration dataList={elem.timeDetail} listId={elem.idAuthor}/>
                 </View>
             ))}
         </View>
