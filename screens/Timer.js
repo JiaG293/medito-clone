@@ -57,6 +57,13 @@ useEffect(() => {
   console.log(dataTimer);
 }, []);
  */
+  const convertToTimer = (durationString) => {
+    const stringWithoutMin = durationString.replace('min', '').trim();
+
+    const minutes = parseInt(stringWithoutMin, 10);
+
+    return minutes;
+  };
 
 
 
@@ -85,16 +92,17 @@ useEffect(() => {
           <ListAuthorDuration data={route.params.itemTimerDetails.durations} onSelect={handleSelectedDataDuration}></ListAuthorDuration>
         </SafeAreaView>
         <View style={styles.download}>
-          <DownloadTimer author='JiaG' time='9'></DownloadTimer>
+          <DownloadTimer author={route.params?.itemTimerDetails.author} time={route.params?.itemTimerDetails.timeSummary}></DownloadTimer>
         </View>
 
       </ScrollView>
-
+      {console.log('time duration selected:', selectedDataId.time)}
       <Pressable
         android_ripple={{ color: '#9eb9f7', borderless: false }}
         onPress={() => navigation.navigate('Player', {
-          dataPlayer: {...selectedDataId},
-          titlePlaying: route.params?.itemTimerDetails.title
+          dataPlayer: { ...selectedDataId },
+          titlePlaying: route.params?.itemTimerDetails.title,
+          playDuration: selectedDataId.time
         })}
         style={({ pressed }) => [
           { backgroundColor: pressed ? '#9eb9f7' : '#f4f5b0' }

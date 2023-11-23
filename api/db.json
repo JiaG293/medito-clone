@@ -5,9 +5,9 @@
             "titleCourses": "Courses 1",
             "subTitleCourses": "Step courses 1",
             "imageCourses": "50x50.png",
-            "listCoursesDetail": {
-                "titleItemCourses": "haha",
-                "contentItemCourses": "haha",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
                 "listTimerDetails":  [
                     {
                         "idTimer": "bd7acbea-c1b1-46c2-aed5",
@@ -24,17 +24,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -46,17 +46,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -78,17 +78,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -100,17 +100,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -125,9 +125,9 @@
             "titleCourses": "Courses 2",
             "subTitleCourses": "Step courses 2",
             "imageCourses": "50x50.png",
-            "listCoursesDetail": {
-                "titleItemCourses": "haha",
-                "contentItemCourses": "haha",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
                 "listTimerDetails":  [
                     {
                         "idTimer": "bd7acbea-c1b1-46c2-aed5",
@@ -144,17 +144,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -166,17 +166,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -198,17 +198,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -220,17 +220,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -245,9 +245,9 @@
             "titleCourses": "Courses 3",
             "subTitleCourses": "Step courses 3",
             "imageCourses": "50x50.png",
-            "listCoursesDetail": {
-                "titleItemCourses": "haha",
-                "contentItemCourses": "haha",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
                 "listTimerDetails":  [
                     {
                         "idTimer": "bd7acbea-c1b1-46c2-aed5",
@@ -264,17 +264,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -286,17 +286,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -318,17 +318,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -340,17 +340,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -365,9 +365,9 @@
             "titleCourses": "Courses 4",
             "subTitleCourses": "Step courses 4",
             "imageCourses": "50x50.png",
-            "listCoursesDetail": {
-                "titleItemCourses": "haha",
-                "contentItemCourses": "haha",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
                 "listTimerDetails":  [
                     {
                         "idTimer": "bd7acbea-c1b1-46c2-aed5",
@@ -384,17 +384,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -406,17 +406,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -438,17 +438,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -460,17 +460,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -485,9 +485,9 @@
             "titleCourses": "Courses 5",
             "subTitleCourses": "Step courses 5",
             "imageCourses": "50x50.png",
-            "listCoursesDetail": {
-                "titleItemCourses": "haha",
-                "contentItemCourses": "haha",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
                 "listTimerDetails":  [
                     {
                         "idTimer": "bd7acbea-c1b1-46c2-aed5",
@@ -504,17 +504,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -526,17 +526,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -558,17 +558,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf1",
                                         "time": 5,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf2",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf3",
                                         "time": 15,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -580,17 +580,17 @@
                                     {
                                         "idTimeDetail": "aadkh14kdhf11",
                                         "time": 10,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf22",
                                         "time": 20,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     },
                                     {
                                         "idTimeDetail": "aadkh14kdhf33",
                                         "time": 30,
-                                        "urlAudio": "http://localhost:5555/Arti.mp3"
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
                                     }
                                 ]
     
@@ -602,6 +602,249 @@
         }
         
         
+    ],
+
+    "PACKS": [
+        {
+            "idPack": "bd7acbea-c1b1-46c2-a3d5",
+            "titlePack": "Pack 1",
+            "subTitlePack": "Step Pack 1",
+            "imagePack": "50x50.png",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
+                "listTimerDetails":  [
+                    {
+                        "idTimer": "bd7acbea-c1b1-46c2-aed5",
+                        "title": "Item 1 of Course",
+                        "content": "descriptions of the first item",
+                        "image": "50x50.png",
+                        "timeSummary": "13 min",
+                        "author": "John smith",
+                        "durations": [
+                            {
+                                "idAuthor": "7acbea21fadh",
+                                "author": "John Smith",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf1",
+                                        "time": 5,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf2",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf3",
+                                        "time": 15,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            },
+                            {
+                                "idAuthor": "7acbea21fadh12",
+                                "author": "John Wick",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf11",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf22",
+                                        "time": 20,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf33",
+                                        "time": 30,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            }
+                        ]
+                    },
+                    {
+                        "id": "bd7acbea-c1b1-46c2-aed513",
+                        "title": "Item 2 of Course",
+                        "content": "descriptions of the second item",
+                        "image": "50x50.png",
+                        "timeSummary": "50 min",
+                        "author": "John smith",
+                        "durations": [
+                            {
+                                "idAuthor": "7acbea21fadh1",
+                                "author": "John Smith",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf1",
+                                        "time": 5,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf2",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf3",
+                                        "time": 15,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            },
+                            {
+                                "idAuthor": "7acbea21fadh12",
+                                "author": "John Wick",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf11",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf22",
+                                        "time": 20,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf33",
+                                        "time": 30,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "idPack": "bd7acbea-c1b1-733fad",
+            "titlePack": "Pack 1",
+            "subTitlePack": "Step Pack 1",
+            "imagePack": "50x50.png",
+            "listDetail": {
+                "titleItem": "haha",
+                "contentItem": "haha",
+                "listTimerDetails":  [
+                    {
+                        "idTimer": "bd7acbea-c1b1-46c2-ae3d5",
+                        "title": "Item 1 of Course",
+                        "content": "descriptions of the first item",
+                        "image": "50x50.png",
+                        "timeSummary": "13 min",
+                        "author": "John smith",
+                        "durations": [
+                            {
+                                "idAuthor": "7acbea21fadh",
+                                "author": "John Smith",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf1",
+                                        "time": 5,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf2",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf3",
+                                        "time": 15,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            },
+                            {
+                                "idAuthor": "7acbea21fadh12",
+                                "author": "John Wick",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf11",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf22",
+                                        "time": 20,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf33",
+                                        "time": 30,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            }
+                        ]
+                    },
+                    {
+                        "id": "bd7acbea-c1b1-46c2-aed5513",
+                        "title": "Item 2 of Course",
+                        "content": "descriptions of the second item",
+                        "image": "50x50.png",
+                        "timeSummary": "50 min",
+                        "author": "John smith",
+                        "durations": [
+                            {
+                                "idAuthor": "7acbea21fadh1",
+                                "author": "John Smith",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf1",
+                                        "time": 5,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf2",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf3",
+                                        "time": 15,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            },
+                            {
+                                "idAuthor": "7acbea21fadh12",
+                                "author": "John Wick",
+                                "timeDetail": [
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf11",
+                                        "time": 10,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf22",
+                                        "time": 20,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    },
+                                    {
+                                        "idTimeDetail": "aadkh14kdhf33",
+                                        "time": 30,
+                                        "urlAudio": "http://localhost:5000/Arti.mp3"
+                                    }
+                                ]
+    
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
     ]
    
 }

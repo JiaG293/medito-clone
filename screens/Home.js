@@ -44,6 +44,8 @@ export default function Home({ navigation, route }) {
       });
   }, [])
 
+ 
+
   return (
     <View style={styles.container}>
       <ScrollView style={{ minHeight: 100, maxHeight: 1900 }}>
@@ -103,11 +105,11 @@ export default function Home({ navigation, route }) {
                   title={item.titleCourses}
                   image={item.imageCourses}
                   subtitle={item.subTitleCourses}
-                  onPress={() => navigation.navigate('Details', { listCoursesDetail: {...courses[index].listCoursesDetail} })}
+                  onPress={() => navigation.navigate('Details', { listDetail: {...courses[index].listDetail} })}
                 >
                 </ItemCourseHome>
               )}
-              keyExtractor={item => item.id}
+              keyExtractor={item => item.idCourses}
               initialNumToRender={5}
             >
             </FlatList>

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Alert, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 import Slider from '@react-native-community/slider'
 import Modal from 'react-native-modal'
@@ -9,45 +9,28 @@ import BackgroundSounds from '../components/BackgroundSounds'
 import ProgressBar from '../components/ProgressBar'
 
 
-const CustomSlider = memo(({ value, onValueChange, disabled }) => {
-  return (
-    <Slider
-      style={styles.slider}
-      minimumValue={0}
-      maximumValue={audioState.duration}
-      value={value}
-      onValueChange={onValueChange}
-      onSlidingComplete={onValueChange}
-      disabled={disabled}
-      minimumTrackTintColor="#C8BA9D"
-      maximumTrackTintColor="#000000"
-      thumbTintColor='#C8BA9D'
-    />
-  );
-});
-
-
 export default function Player({ navigation, route }) {
-  //Modal
   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalVisible(!isModalVisible);
-  };
   const [audioState, setAudioState] = useState({
     sound: null,
     isPlaying: false,
     position: 0,
     duration: 0,
-    initialVolume: 0.5,
+    initialVolume: 1,
   });
 
+  const toggleModal = () => {
+    setIsModalVisible(!isModalVisible);
+  };
 
-  // Control audio
-  const loadAudio = async (audio, isUrl) => {
-    const { sound } = await Audio.Sound.createAsync(isUrl ? { uri: audio } : require('../assets/' + audio));
+  const loadAudio = async (audio, duration) => {
+    const { sound } = await Audio.Sound.createAsync(
+      audio.includes('http') ? { uri: audio } : require('../assets/Arti.mp3'),
+      { isLooping: true }
+    );
+
     const status = await sound.getStatusAsync();
-    setAudioState(prevState => ({
+    setAudioState((prevState) => ({
       ...prevState,
       sound,
       duration: status.durationMillis,
@@ -55,12 +38,20 @@ export default function Player({ navigation, route }) {
 
     sound.setOnPlaybackStatusUpdate((status) => {
       if (status.isPlaying) {
-        setAudioState(prevState => ({
+        setAudioState((prevState) => ({
           ...prevState,
           position: status.positionMillis,
         }));
       }
     });
+
+    setTimeout(() => {
+      sound.pauseAsync();
+      setAudioState((prevState) => ({
+        ...prevState,
+        isPlaying: false,
+      }));
+    }, convertToMilliseconds(duration));
   };
 
   const togglePlayPause = async () => {
@@ -71,7 +62,7 @@ export default function Player({ navigation, route }) {
       } else {
         await sound.playAsync();
       }
-      setAudioState(prevState => ({
+      setAudioState((prevState) => ({
         ...prevState,
         isPlaying: !prevState.isPlaying,
       }));
@@ -82,7 +73,7 @@ export default function Player({ navigation, route }) {
     const { sound } = audioState;
     if (sound) {
       await sound.setPositionAsync(value);
-      setAudioState(prevState => ({
+      setAudioState((prevState) => ({
         ...prevState,
         position: value,
       }));
@@ -90,16 +81,20 @@ export default function Player({ navigation, route }) {
   };
 
   useEffect(() => {
-    let audio = route.params?.dataPlayer.urlAudio //'Arti.mp3'
-    if(audio == null){
-      Alert.alert("Cant not find audio")
+    let audio = route.params?.dataPlayer.urlAudio ?? 'http://localhost:5000/Arti.mp3';
+    let playDuration = route.params?.playDuration ?? 1;
+    if (audio == null) {
+      Alert.alert("Cant not find audio");
       console.log("Cant not find audio");
-    }else{
-      loadAudio(audio, audio.includes('http'));
+    } else {
+      loadAudio(audio, playDuration);
     }
-
   }, []);
 
+  const convertToMilliseconds = (minutes) => {
+    const totalMilliseconds = minutes * 60 * 1000;
+    return totalMilliseconds;
+  };
 
   const getPositionMinutesSeconds = (milliseconds) => {
     const totalSeconds = milliseconds / 1000;

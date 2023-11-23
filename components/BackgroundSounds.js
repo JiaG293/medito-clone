@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; // Import icon từ thư viện
 import { Audio } from 'expo-av';
@@ -6,45 +6,31 @@ import VolumeControl from './VolumeControl';
 
 const BackgroundSounds = ({ data, defaultAudioId }) => {
   const [selectedAudio, setSelectedAudio] = useState(defaultAudioId);
-
-
-
-
-
-  const [initialVolume, setinitialVolume] = useState(0.5);
+  const [initialVolume, setInitialVolume] = useState(0.5);
   const [soundObject, setSoundObject] = useState(null);
 
   const playAudio = async (audio) => {
-    if (soundObject) {
-      await soundObject.unloadAsync();
-    }
-
-    if (audio.id !== selectedAudio) {
-      setSelectedAudio(audio.id);
-      const { sound } = await Audio.Sound.createAsync(audio.source);
-      setSoundObject(sound);
-      await sound.setVolumeAsync(initialVolume)
-      await sound.playAsync();
-    } else {
+    if (audio.id === defaultAudioId) {
+      if (soundObject) {
+        await soundObject.stopAsync();
+        await soundObject.unloadAsync();
+        setSoundObject(null); // Xóa âm thanh hiện tại
+      }
       setSelectedAudio(null);
+    } else {
+      if (soundObject) {
+        await soundObject.stopAsync();
+        await soundObject.unloadAsync();
+      }
+
+      const { sound } = await Audio.Sound.createAsync(audio.source, { isLooping: true });
+      setSoundObject(sound);
+      await sound.setVolumeAsync(initialVolume);
+      await sound.playAsync();
+      setSelectedAudio(audio.id);
     }
   };
 
-  const renderItem = ({ item }) => {
-    const isSelected = selectedAudio === item.id;
-
-    return (
-      <TouchableOpacity
-        style={styles.item}
-        onPress={() => playAudio(item)}
-      >
-        <Text style={styles.audioName}>{item.name}</Text>
-        {isSelected && (
-          <MaterialCommunityIcons name="check-circle-outline" size={24} color="#ffffff" />
-        )}
-      </TouchableOpacity>
-    );
-  };
 
   return (
     <View>
@@ -53,12 +39,25 @@ const BackgroundSounds = ({ data, defaultAudioId }) => {
       </View>
       <FlatList
         data={data}
-        renderItem={renderItem}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            style={styles.item}
+            onPress={() => playAudio(item)}
+          >
+            <Text style={styles.audioName}>{item.name}</Text>
+            {selectedAudio === item.id && (
+              <MaterialCommunityIcons name="check-circle-outline" size={24} color="#ffffff" />
+            )}
+          </TouchableOpacity>
+        )}
         keyExtractor={(item) => item.id}
       />
     </View>
   );
 };
+
+
+
 
 const styles = StyleSheet.create({
   item: {
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(108, 108, 108, 0.5)',
     padding: 20,
   }
-  
+
 });
 
 export default BackgroundSounds;

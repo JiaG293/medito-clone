@@ -6,13 +6,14 @@ import ItemDetails from '../components/ItemDetails'
 
 
 export default function Details({ navigation, route }) {
-  console.log("data from screen home: \n", route.params.listCoursesDetail);
-  
+  console.log("data from screen home: \n", route.params?.listDetail);
+
   const [details, setDetails] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
+  console.log("Time duration: ", route.params?.playDurationMillis);
 
   useEffect(() => {
-    setDetails(route.params?.listCoursesDetail);
+    setDetails(route.params?.listDetail);
   }, [])
 
   const handleOnPress = selected => {
@@ -42,8 +43,8 @@ export default function Details({ navigation, route }) {
     <View style={styles.container}>
       <View style={styles.banner}>
         <BannerPack
-          title={details.titleItemCourses}
-          subtile={details.contentItemCourses}
+          title={details.titleItem}
+          subtile={details.contentItem}
           onPress={() => deSelectItems()}
           image='50x50png'
         >
@@ -61,11 +62,11 @@ export default function Details({ navigation, route }) {
               subtitle={item.content}
               onPress={() => {
                 navigation.navigate('Timer', {
-                  itemTimerDetails: {...details.listTimerDetails[index]},
+                  itemTimerDetails: { ...details.listTimerDetails[index] },
                   // itemId: item.id,
                   // itemData: item.title,
-                  titleItemCourses: details.titleItemCourses,
-                  contentItemCourses: details.contentItemCourses
+                  titleItem: details.titleItem,
+                  contentItem: details.contentItem
                 })
                 handleOnPress(item);
               }
@@ -75,7 +76,7 @@ export default function Details({ navigation, route }) {
             >
             </ItemDetails>
           )}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.idTimer}
           initialNumToRender={10}
         >
         </FlatList>
