@@ -7,8 +7,12 @@ import Stat from '../components/Stat';
 import Quote from '../components/Quote';
 import PressableCustom from '../components/PressableCustom';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import FloatingMenu from '../components/FloatingMenu';
+
 
 export default function Home({ navigation, route }) {
+
+
   const [courses, setCourses] = useState([]);
 
   const apiUrl = 'http://localhost:3000/COURSES'; // URL api endpoint
@@ -44,7 +48,9 @@ export default function Home({ navigation, route }) {
       });
   }, [])
 
- 
+
+
+
 
   return (
     <View style={styles.container}>
@@ -105,7 +111,7 @@ export default function Home({ navigation, route }) {
                   title={item.titleCourses}
                   image={item.imageCourses}
                   subtitle={item.subTitleCourses}
-                  onPress={() => navigation.navigate('Details', { listDetail: {...courses[index].listDetail} })}
+                  onPress={() => navigation.navigate('Details', { listDetail: { ...courses[index].listDetail } })}
                 >
                 </ItemCourseHome>
               )}
@@ -156,22 +162,20 @@ export default function Home({ navigation, route }) {
   )
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
   },
   categoryContainer: {
-    flex: 1,
     marginVertical: 20,
   },
   categoryRow: {
     flexDirection: 'row',
   },
   coursesContainer: {
-    flex: 3,
   },
   statsContainer: {
-    flex: 1,
     flexDirection: 'row',
     backgroundColor: 'rgba(34, 35, 39, 0.84)',
     borderRadius: 10,
@@ -181,7 +185,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   quotesContainer: {
-    flex: 1,
   }
 })
+
+
 

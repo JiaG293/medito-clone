@@ -1,14 +1,27 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Pressable, SafeAreaView } from 'react-native'
 import { Image, StyleSheet, Text, View } from 'react-native'
+import FloatingMenu from './FloatingMenu'
 
 export default function PressableCustom({ onPress, colorRiple, colorButton, colorButtonPressed, icon, colorIcon, colorIconPressed, sizeIcon }) {
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuVisible(!isMenuVisible);
+    };
+
+    const handlePress = () => {
+        onPress();
+        toggleMenu();
+    };
+
+
     return (
         <SafeAreaView style={styles.container}>
             <Pressable
                 android_ripple={{ color: { colorRiple }, borderless: false }}
-                onPress={onPress}
+                onPress={handlePress}
                 style={({ pressed }) => [
                     {
                         borderRadius: 10,
@@ -32,6 +45,7 @@ export default function PressableCustom({ onPress, colorRiple, colorButton, colo
 
                     />)}
             </Pressable>
+            <FloatingMenu isVisible={isMenuVisible} toggleMenu={toggleMenu} />
         </SafeAreaView>
     )
 }

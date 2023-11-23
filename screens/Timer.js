@@ -120,11 +120,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container1: {
-    flex: 1,
+    // flex: 1,
     marginBottom: 70,
   },
   banner: {
-    flex: 0.5,
+    // flex: 0.5,
   },
   beginButton: {
     position: 'absolute',

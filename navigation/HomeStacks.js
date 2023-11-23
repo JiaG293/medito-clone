@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/Home';
@@ -10,6 +10,8 @@ import Downloads from '../screens/Downloads';
 import Timer from '../screens/Timer';
 import PressableCustom from '../components/PressableCustom';
 import Player from '../screens/Player';
+import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import About from '../screens/About';
 /* 
 import  from '../screens/';
 import  from '../screens/'; */
@@ -17,10 +19,10 @@ import  from '../screens/'; */
 
 const Stack = createNativeStackNavigator();
 
-export default function HomeStacks({ navigation }) {
+export default function HomeStacks({ navigation, route }) {
     return (
         <Stack.Navigator
-            initialRouteName="Home" // khoi tao route "Danh sách công việc"
+            initialRouteName="Home"
             backBehavior="history"
         >
 
@@ -28,7 +30,8 @@ export default function HomeStacks({ navigation }) {
                 options={({ navigation, route }) => ({
                     headerRight: (() => (<PressableCustom
                         colorRiple='rgba(187, 187, 187, 1)'
-                        onPress={() => { }}
+                        onPress={() => console.log('toggle menu')}
+                        onPress1={() => navigation.navigate('About')}
                     >
                     </PressableCustom>))
                 })}
@@ -41,8 +44,24 @@ export default function HomeStacks({ navigation }) {
             <Stack.Screen name="Details" component={Details} />
             <Stack.Screen name="Timer" component={Timer} />
             <Stack.Screen name="Player" component={Player} />
-
-
+            <Stack.Screen name="About" component={About} />
         </Stack.Navigator>
+
     );
 }
+
+
+const styles = StyleSheet.create({
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    menu: {
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 10,
+        elevation: 5,
+    },
+});
