@@ -10,7 +10,7 @@ export default function Details({ navigation, route }) {
 
   const [details, setDetails] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
-  console.log("Time duration: ", route.params?.playDurationMillis);
+  console.log("item select", selectedItems);
 
   useEffect(() => {
     setDetails(route.params?.listDetail);
@@ -46,7 +46,7 @@ export default function Details({ navigation, route }) {
           title={details.titleItem}
           subtile={details.contentItem}
           onPress={() => deSelectItems()}
-          image='50x50png'
+          image={route.params?.image ?? 'http://localhost:5000/50x50.png'}
         >
         </BannerPack>
       </View>
@@ -63,10 +63,9 @@ export default function Details({ navigation, route }) {
               onPress={() => {
                 navigation.navigate('Timer', {
                   itemTimerDetails: { ...details.listTimerDetails[index] },
-                  // itemId: item.id,
-                  // itemData: item.title,
                   titleItem: details.titleItem,
-                  contentItem: details.contentItem
+                  contentItem: details.contentItem,
+                  idItem: route.params.idItem
                 })
                 handleOnPress(item);
               }
@@ -76,7 +75,7 @@ export default function Details({ navigation, route }) {
             >
             </ItemDetails>
           )}
-          keyExtractor={item => item.idTimer}
+          keyExtractor={(item, index) => item.idTimer + index}
           initialNumToRender={10}
         >
         </FlatList>

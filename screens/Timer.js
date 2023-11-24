@@ -9,7 +9,13 @@ import DownloadTimer from '../components/DownloadTimer'
 
 export default function Timer({ navigation, route }) {
   console.log("data from screen details:\n", route.params?.itemTimerDetails);
+  console.log("id", route.params?.itemTimerDetails?.id ?? route.params?.itemListId, "\nidItem", route.params.idItem);
   const [selectedDataId, setSelectedDataId] = useState({});
+  const [isOn, setIsOn] = useState(false);
+
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  };
 
   const handleSelectedDataDuration = (id) => {
     route.params.itemTimerDetails.durations.filter((elem) => {
@@ -24,39 +30,6 @@ export default function Timer({ navigation, route }) {
 
   useEffect(() => console.log("data timer selected: ", selectedDataId), [selectedDataId])
 
-  /* const ITEMDETAILS_URL = 'http://localhost:3000/ITEMDETAILS';
-  const DURATIONS_URL = 'http://localhost:3000/DURATIONS';
-
-  const getApi = (url, state, setState, nameField) => {
-    const getDataFromApi = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error('network error');
-        }
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error('Error get api:', error);
-        return null;
-      }
-    };
-
-    getDataFromApi()
-      .then((data) => {
-        console.log('Data from API:', data);
-        setState({ ...state, "ITEMDETAILS": {...data[0]} });
-  })
-      .catch ((error) => {
-    console.error('Error:', error);
-  });
-}
-const a = "ITEMSDETAILS";
-useEffect(() => {
-  getApi(ITEMDETAILS_URL, dataTimer, setDataTimer, a);
-  console.log(dataTimer);
-}, []);
- */
   const convertToTimer = (durationString) => {
     const stringWithoutMin = durationString.replace('min', '').trim();
 
@@ -89,10 +62,20 @@ useEffect(() => {
           </BannerPack>
         </View>
         <SafeAreaView style={{ flex: 1 }}>
-          <ListAuthorDuration data={route.params.itemTimerDetails.durations} onSelect={handleSelectedDataDuration}></ListAuthorDuration>
+          <ListAuthorDuration
+            data={route.params.itemTimerDetails.durations}
+            onSelect={handleSelectedDataDuration}
+          >
+          </ListAuthorDuration>
         </SafeAreaView>
         <View style={styles.download}>
-          <DownloadTimer author={route.params?.itemTimerDetails.author} time={route.params?.itemTimerDetails.timeSummary}></DownloadTimer>
+          <DownloadTimer
+            author={route.params?.itemTimerDetails.author}
+            time={route.params?.itemTimerDetails.timeSummary}
+            isOn={isOn}
+            handleToggle={handleToggle}
+          >
+          </DownloadTimer>
         </View>
 
       </ScrollView>

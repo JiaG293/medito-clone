@@ -7,15 +7,23 @@ import Stat from '../components/Stat';
 import Quote from '../components/Quote';
 import PressableCustom from '../components/PressableCustom';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import FloatingMenu from '../components/FloatingMenu';
 
 
 export default function Home({ navigation, route }) {
 
 
   const [courses, setCourses] = useState([]);
+  const [daily, setDaily] = useState({});
+  const [timer, setTimer] = useState([]);
+  const [downloads, setDownloads] = useState([]);
+  const [quote, setQuote] = useState({});
 
-  const apiUrl = 'http://localhost:3000/COURSES'; // URL api endpoint
+  const baseURL = 'http://localhost:3000/';
+  const coursesUrl = `${baseURL}COURSES`; // URL api endpoint
+  const dailyUrl = `${baseURL}DAILY`;
+  const timerUrl = `${baseURL}TIMER`;
+  const downloadsUrl = `${baseURL}DOWNLOADS`;
+  const quotesUrl = `${baseURL}QUOTES`;
 
   const requestOptions = {
     method: 'GET',
@@ -38,7 +46,7 @@ export default function Home({ navigation, route }) {
   }
 
   useEffect(() => {
-    fetchData(apiUrl, requestOptions)
+    fetchData(coursesUrl, requestOptions)
       .then(data => {
         setCourses(data)
         console.log('Data from API:', data);
@@ -46,7 +54,42 @@ export default function Home({ navigation, route }) {
       .catch(error => {
         console.error('Get data fail:', error);
       });
+
+    getApiObject(dailyUrl, setDaily)
+
+    getApiArray(timerUrl, setTimer)
+
+    getApiArray(downloadsUrl, setDownloads)
+
+    getApiObject(quotesUrl, setQuote)
   }, [])
+
+
+  function getApiObject(url, setData) {
+
+    fetchData(url, requestOptions)
+      .then(data => {
+        let temp = data[Math.floor(Math.random() * data.length)]
+        setData(data[Math.floor(Math.random() * data.length)])
+        console.log('Data from api object:', temp);
+      })
+      .catch(error => {
+        console.error('Get data fail api object:', error);
+      });
+  }
+  function getApiArray(url, setData) {
+    fetchData(url, requestOptions)
+      .then(data => {
+        setData(data)
+        console.log('Data from api array:', data);
+      })
+      .catch(error => {
+        console.error('Get data fail api array:', error);
+      });
+  }
+
+
+
 
 
 
@@ -60,13 +103,24 @@ export default function Home({ navigation, route }) {
             <ButtonCategory
               title='Daily Meditation'
               image='50x50.png'
-              onPress={() => navigation.navigate('Daily Meditation')}
-
+              onPress={() => {
+                navigation.navigate('Daily Meditation', {
+                  itemTimerDetails: { ...daily.listDetail.listTimerDetails[Math.floor(Math.random() * daily.listDetail.listTimerDetails.length)] },
+                  titleItem: daily.titleItem,
+                  contentItem: daily.contentItem
+                })
+              }}
             ></ButtonCategory>
             <ButtonCategory
               title='Timer'
               image='50x50.png'
-              onPress={() => navigation.navigate('Timer')}
+              onPress={() => navigation.navigate('Timer', {
+                itemTimerDetails: { ...timer[0].listDetail.listTimerDetails[0] },
+                titleItem: timer[0].titleItem,
+                contentItem: timer[0].contentItem,
+                idItem: timer[0].id,
+                itemListId: timer[0].id
+              })}
 
             ></ButtonCategory>
           </View>
@@ -74,7 +128,9 @@ export default function Home({ navigation, route }) {
             <ButtonCategory
               title='Downloads'
               image='50x50.png'
-              onPress={() => navigation.navigate('Downloads')}
+              onPress={() => navigation.navigate('Downloads',
+                { listDownloads: [...downloads] }
+              )}
 
             ></ButtonCategory>
             <ButtonCategory
@@ -107,15 +163,20 @@ export default function Home({ navigation, route }) {
               data={courses}
               renderItem={({ item, index }) => (
                 <ItemCourseHome
-                  id={item.idCourses}
-                  title={item.titleCourses}
-                  image={item.imageCourses}
-                  subtitle={item.subTitleCourses}
-                  onPress={() => navigation.navigate('Details', { listDetail: { ...courses[index].listDetail } })}
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  subtitle={item.subTitle}
+                  onPress={() => navigation.navigate('Details', {
+                    listDetail: { ...courses[index].listDetail },
+                    idItem: item?.id,
+                    image: courses[index].image
+                  })
+                  }
                 >
                 </ItemCourseHome>
               )}
-              keyExtractor={item => item.idCourses}
+              keyExtractor={item => item.id}
               initialNumToRender={5}
             >
             </FlatList>
@@ -126,7 +187,7 @@ export default function Home({ navigation, route }) {
           <Stat
             count={0}
             title="Current Streak"
-            onPress={() => navigation.navigate('Player')} //test screen not comfirm
+            onPress={() => { }}
 
           ></Stat>
           <Stat
@@ -151,8 +212,8 @@ export default function Home({ navigation, route }) {
 
         <View style={styles.quotesContainer}>
           <Quote
-            content="Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking."
-            author="Steve Jobs"
+            content={quote.content}
+            author={quote.author}
           ></Quote>
 
 

@@ -46,10 +46,10 @@ export default function Packs({ navigation }) {
           data={packs}
           renderItem={({ item, index }) => (
             <ItemPack
-              id={item.idPack}
-              title={item.titlePack}
-              image={item.imagePack}
-              subtitle={item.subTitlePack}
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              subtitle={item.subTitle}
               onPress={() => navigation.navigate('Details', { listDetail: { ...packs[index].listDetail } })}
             >
             </ItemPack>
