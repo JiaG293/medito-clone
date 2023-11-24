@@ -6,7 +6,6 @@ import DailyMeditation from '../screens/DailyMeditation';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Packs from '../screens/Packs';
 import Details from '../screens/Details';
-import Sounds from '../screens/Sounds';
 import Player from '../screens/Player';
 import PressableCustom from '../components/PressableCustom';
 /* 
@@ -36,11 +35,6 @@ export default function PacksStacks({ navigation }) {
             <Stack.Screen
                 name="Player"
                 component={Player}
-            />
-
-            <Stack.Screen
-                name="Sounds"
-                component={Sounds}
             />
         </Stack.Navigator>
     );

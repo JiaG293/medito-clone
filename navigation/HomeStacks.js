@@ -10,7 +10,7 @@ import Downloads from '../screens/Downloads';
 import Timer from '../screens/Timer';
 import PressableCustom from '../components/PressableCustom';
 import Player from '../screens/Player';
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Linking, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import About from '../screens/About';
 /* 
 import  from '../screens/';
@@ -20,6 +20,18 @@ import  from '../screens/'; */
 const Stack = createNativeStackNavigator();
 
 export default function HomeStacks({ navigation, route }) {
+
+    const handlePressLink = async (link) => {
+        const url = link;
+        const supported = await Linking.canOpenURL(url);
+
+        if (supported) {
+            await Linking.openURL(url);
+        } else {
+            console.log("Failed to open URL");
+        }
+    };
+
     return (
         <Stack.Navigator
             initialRouteName="Home"
@@ -32,6 +44,12 @@ export default function HomeStacks({ navigation, route }) {
                         colorRiple='rgba(187, 187, 187, 1)'
                         onPress={() => console.log('toggle menu')}
                         onPress1={() => navigation.navigate('About')}
+                        onPress2={() => handlePressLink('https://meditofoundation.org/blog')}
+                        onPress3={() =>  handlePressLink('mailto:hello@meditofoundation.org')}
+                        onPress4={() => handlePressLink('https://meditofoundation.org/privacy')}
+                        onPress5={() => handlePressLink('https://meditofoundation.org/terms-of-service')}
+                        onPress6={() => handlePressLink('https://meditofoundation.org/volunteer')}
+                        onPress7={() => handlePressLink('https://meditofoundation.org/donate')}
                     >
                     </PressableCustom>))
                 })}
