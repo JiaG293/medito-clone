@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'rgba(34, 35, 39, 0.84)',
         borderRadius: 10,
+        marginTop: 10,
         margin: 10,
         padding: 10,
     },

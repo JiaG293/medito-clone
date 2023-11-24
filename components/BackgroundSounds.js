@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; // Import icon từ thư viện
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { Audio } from 'expo-av';
 import VolumeControl from './VolumeControl';
 
@@ -14,7 +14,7 @@ const BackgroundSounds = ({ data, defaultAudioId }) => {
       if (soundObject) {
         await soundObject.stopAsync();
         await soundObject.unloadAsync();
-        setSoundObject(null); // Xóa âm thanh hiện tại
+        setSoundObject(null);
       }
       setSelectedAudio(null);
     } else {

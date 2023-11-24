@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native'
 
 const ItemPack = ({ title, subtitle, image, onPress, id }) => {
     return (
@@ -15,7 +15,7 @@ const ItemPack = ({ title, subtitle, image, onPress, id }) => {
                     styles.pressable,
                 ]}
             >
-                <View style={styles.image} source={image}></View>
+                <Image style={styles.image} source={{uri: image}}></Image>
                 <View style={styles.content}>
                     <Text
                         ellipsizeMode='tail'
@@ -40,8 +40,8 @@ const ItemPack = ({ title, subtitle, image, onPress, id }) => {
 const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
-        marginHorizontal: 10,
         marginTop: 10,
+        marginLeft: 10,
     },
     pressable: {
         borderRadius: 10,

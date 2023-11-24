@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 
 const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
+
     return (
         <View style={styles.container} key={id}>
             <Pressable
@@ -15,7 +16,7 @@ const ItemCourseHome = ({ title, subtitle, image, id, onPress }) => {
                     styles.pressable,
                 ]}
             >
-                <View style={styles.image} source={image}></View>
+                <Image style={styles.image} source={{uri: image}}></Image>
                 <View style={styles.content}>
                     <Text ellipsizeMode='tail' numberOfLines={2} style={styles.title}>{title}</Text>
                     <Text ellipsizeMode='tail' numberOfLines={2} style={styles.subtitle}>{subtitle}</Text>

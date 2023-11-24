@@ -3,13 +3,8 @@ import React, { useState } from 'react'
 import { Pressable } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-export default function DownloadTimer({ data, onPress, author, time }) {
-    const [isOn, setIsOn] = useState(false);
-
-    const handleToggle = () => {
-        setIsOn(!isOn);
-        onPress
-    };
+export default function DownloadTimer({ data, onPress, author, time, isOn, handleToggle }) {
+    
 
     return (
         <View style={styles.container}>

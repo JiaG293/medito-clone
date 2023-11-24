@@ -38,8 +38,8 @@ export default function ItemFolder({ onPress, title, id  }) {
 const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
-        marginHorizontal: 10,
         marginTop: 10,
+        marginLeft: 10,
     },
     pressable: {
         borderRadius: 10,

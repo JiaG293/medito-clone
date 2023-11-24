@@ -18,8 +18,8 @@ const ItemDetails = ({ title, subtitle, image, onPress, id, icon, onLongPress, s
                     },
                     styles.pressable,
                 ]}
-            >{/* check */}
-                <View style={styles.image} source={image}>
+            >
+                <View style={styles.image}>
                     <MaterialCommunityIcons name={selected ? 'check' : (icon ? icon : 'play-circle')} color='#ffffff' size={28}></MaterialCommunityIcons>
                 </View>
                 <View style={styles.content}>
@@ -46,8 +46,8 @@ const ItemDetails = ({ title, subtitle, image, onPress, id, icon, onLongPress, s
 const styles = StyleSheet.create({
     container: {
         borderRadius: 10,
-        marginHorizontal: 10,
         marginTop: 10,
+        marginLeft: 10,
     },
     pressable: {
         borderRadius: 10,

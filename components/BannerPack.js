@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native'
 import React from 'react'
 
 export default function BannerPack({ image, onPress, title, subtile, colorBanner }) {
@@ -15,14 +15,15 @@ export default function BannerPack({ image, onPress, title, subtile, colorBanner
         >
             <View style={styles.content}>
                 <View style={styles.image}>
-                    <Image style={{
-                        width: 120,
-                        height: 120,
-                        resizeMode: 'contain',
-                        flex: 1,
-                    }} source={image}></Image>
+                    <Image
+                        source={{ uri: `http://localhost:5000/${image}` }}
+                        style={{
+                            width: 120,
+                            height: 120,
+                            resizeMode: 'contain',
+                            flex: 1,
+                        }} ></Image>
                 </View>
-
                 <Text
                     ellipsizeMode='tail'
                     numberOfLines={3}
@@ -31,28 +32,27 @@ export default function BannerPack({ image, onPress, title, subtile, colorBanner
                     {title}
                 </Text>
             </View>
-            <Text
-                ellipsizeMode='tail'
-                numberOfLines={3}
-                style={styles.subtitle}
-            >
-                {subtile}
-            </Text>
+            <ScrollView>
+                <Text
+                    ellipsizeMode='tail'
+                    numberOfLines={5}
+                    style={styles.subtitle}
+                >
+                    {subtile}
+                </Text>
+            </ScrollView>
         </Pressable>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        height: 100,
+        flex: 1,
     },
     pressable: {
         elevation: 5,
-        marginVertical: 10,
-        flex: 1
-        
 
-
+        flex: 1,
     },
     image: {
         width: 120,
@@ -79,9 +79,8 @@ const styles = StyleSheet.create({
         fontFamily: 'sans-serif',
         color: '#9c9c9c',
         fontSize: 14,
-        marginTop: 20,
-        paddingLeft: 10,
-        paddingBottom: 10,
-        flexWrap: 'wrap',
+        marginHorizontal: 10,
+        marginVertical: 10,
+
     },
 })
