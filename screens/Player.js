@@ -16,7 +16,7 @@ export default function Player({ navigation, route }) {
     isPlaying: false,
     position: 0,
     duration: 0,
-    initialVolume: 1,
+    initialVolume: 0.5,
   });
 
   const toggleModal = () => {
@@ -26,7 +26,7 @@ export default function Player({ navigation, route }) {
   const loadAudio = async (audio, duration) => {
     const { sound } = await Audio.Sound.createAsync(
       audio.includes('http') ? { uri: audio } : require('../assets/Arti.mp3'),
-      { isLooping: true }
+      { isLooping: true, volume: audioState.initialVolume }
     );
 
     const status = await sound.getStatusAsync();
@@ -289,11 +289,11 @@ const styles = StyleSheet.create({
 
 const dataAudio = [
   { id: '1', name: 'No sound', source: require('../assets/Arti.mp3') },
-  { id: '2', name: 'Peaceful Moment', source: require('../assets/Arti.mp3') },
-  { id: '3', name: 'Wind Chimes', source: require('../assets/Arti.mp3') },
-  { id: '4', name: 'Waves', source: require('../assets/Arti.mp3') },
-  { id: '5', name: 'River', source: require('../assets/Arti.mp3') },
-  { id: '6', name: 'Rain', source: require('../assets/Arti.mp3') },
-  { id: '7', name: 'Safe Haven', source: require('../assets/Arti.mp3') },
-  { id: '8', name: 'Spring Field', source: require('../assets/Arti.mp3') },
+  { id: '2', name: 'Peaceful Moment', source: require('../assets/peacefulmoment.mp3') },
+  { id: '3', name: 'Wind Chimes', source: require('../assets/windchimes.mp3') },
+  { id: '4', name: 'Waves', source: require('../assets/waves.mp3') },
+  { id: '5', name: 'River', source: require('../assets/river.mp3') },
+  { id: '6', name: 'Rain', source: require('../assets/rain.mp3') },
+  { id: '7', name: 'Safe Haven', source: require('../assets/safehaven.mp3') },
+  { id: '8', name: 'Spring Field', source: require('../assets/springfield.mp3') },
 ];

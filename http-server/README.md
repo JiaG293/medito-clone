@@ -1,0 +1,1 @@
+live-server --cors --port=5555 --no-browser
