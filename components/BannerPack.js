@@ -16,11 +16,11 @@ export default function BannerPack({ image, onPress, title, subtile, colorBanner
             <View style={styles.content}>
                 <View style={styles.image}>
                     <Image
-                        source={{ uri: `http://localhost:5000/${image}` }}
+                        source={{ uri: image }}
                         style={{
                             width: 120,
                             height: 120,
-                            resizeMode: 'contain',
+                            resizeMode: 'cover',
                             flex: 1,
                         }} ></Image>
                 </View>

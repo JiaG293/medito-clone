@@ -102,7 +102,7 @@ export default function Home({ navigation, route }) {
           <View style={styles.categoryRow}>
             <ButtonCategory
               title='Daily Meditation'
-              image='50x50.png'
+              image='http://localhost:5000/beginner-960x.png'
               onPress={() => {
                 navigation.navigate('Daily Meditation', {
                   itemTimerDetails: { ...daily.listDetail.listTimerDetails[Math.floor(Math.random() * daily.listDetail.listTimerDetails.length)] },
@@ -113,7 +113,7 @@ export default function Home({ navigation, route }) {
             ></ButtonCategory>
             <ButtonCategory
               title='Timer'
-              image='50x50.png'
+              image='http://localhost:5000/stress-anxiety-960x.png'
               onPress={() => navigation.navigate('Timer', {
                 itemTimerDetails: { ...timer[0].listDetail.listTimerDetails[0] },
                 titleItem: timer[0].titleItem,
@@ -127,7 +127,7 @@ export default function Home({ navigation, route }) {
           <View style={styles.categoryRow}>
             <ButtonCategory
               title='Downloads'
-              image='50x50.png'
+              image='http://localhost:5000/work-life-960x.png'
               onPress={() => navigation.navigate('Downloads',
                 { listDownloads: [...downloads] }
               )}
@@ -135,7 +135,7 @@ export default function Home({ navigation, route }) {
             ></ButtonCategory>
             <ButtonCategory
               title='Sleep'
-              image='50x50.png'
+              image='http://localhost:5000/sleep-960x.png'
               onPress={() => navigation.navigate('Sleep')}
 
             ></ButtonCategory>

@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     image: {
         width: 80,
         height: 80,
-        resizeMode: 'contain',
+        resizeMode: 'cover',
         backgroundColor: 'rgba(45, 252, 171, 0.3)',
         borderRadius: 5,
     },

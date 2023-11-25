@@ -13,7 +13,7 @@ export default function Sleep({ navigation }) {
           title='Getting Started'
           subtile='Find out more about Medito, mindfulness and meditation'
           onPress={() => { }}
-          image='50x50png'
+          image='http://localhost:5000/sleep-960x.png'
         >
         </BannerPack>
       </View>

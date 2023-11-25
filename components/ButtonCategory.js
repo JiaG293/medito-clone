@@ -16,7 +16,7 @@ const ButtonCategory =  ({ title, image, onPress }) => {
                 ]}
             >
                 <View style={styles.buttonRow}>
-                    <Image style={styles.image} source={image}></Image>
+                    <Image style={styles.image} source={{uri: image}}></Image>
                     <Text style={styles.text}>{title}</Text>
                 </View>
             </Pressable>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     image: {
         width: 50,
         height: 50,
-        resizeMode: 'contain',
+        resizeMode: 'cover',
         borderTopLeftRadius: 10,
         borderBottomLeftRadius: 10,
     },

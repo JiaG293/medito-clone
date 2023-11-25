@@ -57,7 +57,7 @@ export default function Timer({ navigation, route }) {
             title={route.params.itemTimerDetails.title}
             subtile={route.params.itemTimerDetails.content}
             onPress={() => { }}
-            image='50x50png'
+            image='http://localhost:5000/intermediate-960x.png'
           >
           </BannerPack>
         </View>
