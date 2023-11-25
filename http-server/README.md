@@ -1,1 +1,1 @@
-live-server --cors --port=5555 --no-browser
+live-server --cors --port=5000 --no-browser
